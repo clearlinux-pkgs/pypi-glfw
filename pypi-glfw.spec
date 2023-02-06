@@ -4,12 +4,13 @@
 #
 Name     : pypi-glfw
 Version  : 2.5.6
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/91/ed/814be1927191ce943cd27c00c66066605fb8af2e535c5f19a66628f68842/glfw-2.5.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/91/ed/814be1927191ce943cd27c00c66066605fb8af2e535c5f19a66628f68842/glfw-2.5.6.tar.gz
 Summary  : A ctypes-based wrapper for GLFW3.
 Group    : Development/Tools
 License  : MIT
+Requires: pypi-glfw-license = %{version}-%{release}
 Requires: pypi-glfw-python = %{version}-%{release}
 Requires: pypi-glfw-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -24,6 +25,14 @@ This module provides Python bindings for `GLFW <http://www.glfw.org/>`__
 (on GitHub: `glfw/glfw <http://github.com/glfw/glfw>`__). It is a
 ``ctypes`` wrapper which keeps very close to the original GLFW API,
 except for:
+
+%package license
+Summary: license components for the pypi-glfw package.
+Group: Default
+
+%description license
+license components for the pypi-glfw package.
+
 
 %package python
 Summary: python components for the pypi-glfw package.
@@ -56,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675436923
+export SOURCE_DATE_EPOCH=1675645532
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -80,6 +89,8 @@ popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-glfw
+cp %{_builddir}/glfw-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-glfw/6a5891f9e1db552a60a1d5d96779d4d97eed61d6 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -96,6 +107,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-glfw/6a5891f9e1db552a60a1d5d96779d4d97eed61d6
 
 %files python
 %defattr(-,root,root,-)
