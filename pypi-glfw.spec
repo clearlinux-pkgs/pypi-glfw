@@ -5,7 +5,7 @@
 #
 Name     : pypi-glfw
 Version  : 2.5.9
-Release  : 5
+Release  : 6
 URL      : https://files.pythonhosted.org/packages/a7/e1/06f03dfc2e8c8af9a722d0add2c99a16e88714b98df866303944731b33c5/glfw-2.5.9.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a7/e1/06f03dfc2e8c8af9a722d0add2c99a16e88714b98df866303944731b33c5/glfw-2.5.9.tar.gz
 Summary  : A ctypes-based wrapper for GLFW3.
@@ -49,6 +49,7 @@ Summary: python3 components for the pypi-glfw package.
 Group: Default
 Requires: python3-core
 Provides: pypi(glfw)
+Requires: glfw-lib
 
 %description python3
 python3 components for the pypi-glfw package.
@@ -66,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680532817
+export SOURCE_DATE_EPOCH=1680622637
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
