@@ -1,5 +1,5 @@
 PKG_NAME := pypi-glfw
-URL = https://files.pythonhosted.org/packages/a7/e1/06f03dfc2e8c8af9a722d0add2c99a16e88714b98df866303944731b33c5/glfw-2.5.9.tar.gz
+URL = https://files.pythonhosted.org/packages/c4/3e/dae9e7d801ee76223b93c33aa5e05d59796cab0a44d287c75cb24cf98fb9/glfw-2.6.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

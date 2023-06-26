@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-glfw
-Version  : 2.5.9
-Release  : 6
-URL      : https://files.pythonhosted.org/packages/a7/e1/06f03dfc2e8c8af9a722d0add2c99a16e88714b98df866303944731b33c5/glfw-2.5.9.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a7/e1/06f03dfc2e8c8af9a722d0add2c99a16e88714b98df866303944731b33c5/glfw-2.5.9.tar.gz
+Version  : 2.6.0
+Release  : 7
+URL      : https://files.pythonhosted.org/packages/c4/3e/dae9e7d801ee76223b93c33aa5e05d59796cab0a44d287c75cb24cf98fb9/glfw-2.6.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c4/3e/dae9e7d801ee76223b93c33aa5e05d59796cab0a44d287c75cb24cf98fb9/glfw-2.6.0.tar.gz
 Summary  : A ctypes-based wrapper for GLFW3.
 Group    : Development/Tools
 License  : MIT
@@ -56,10 +56,10 @@ python3 components for the pypi-glfw package.
 
 
 %prep
-%setup -q -n glfw-2.5.9
-cd %{_builddir}/glfw-2.5.9
+%setup -q -n glfw-2.6.0
+cd %{_builddir}/glfw-2.6.0
 pushd ..
-cp -a glfw-2.5.9 buildavx2
+cp -a glfw-2.6.0 buildavx2
 popd
 
 %build
@@ -67,15 +67,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680622637
+export SOURCE_DATE_EPOCH=1687795909
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
