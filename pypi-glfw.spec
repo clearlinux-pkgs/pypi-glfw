@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-glfw
-Version  : 2.6.1
-Release  : 8
-URL      : https://files.pythonhosted.org/packages/11/ac/a9196051df37d39dfdfe658ca61921a53db933048f15182a1c818fa12518/glfw-2.6.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/11/ac/a9196051df37d39dfdfe658ca61921a53db933048f15182a1c818fa12518/glfw-2.6.1.tar.gz
+Version  : 2.6.2
+Release  : 9
+URL      : https://files.pythonhosted.org/packages/c1/f3/b3f3984f532cfe7e884b1ac9f4a2386df71cac563ab4cf98c999b48aad4f/glfw-2.6.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c1/f3/b3f3984f532cfe7e884b1ac9f4a2386df71cac563ab4cf98c999b48aad4f/glfw-2.6.2.tar.gz
 Summary  : A ctypes-based wrapper for GLFW3.
 Group    : Development/Tools
 License  : MIT
@@ -56,10 +56,10 @@ python3 components for the pypi-glfw package.
 
 
 %prep
-%setup -q -n glfw-2.6.1
-cd %{_builddir}/glfw-2.6.1
+%setup -q -n glfw-2.6.2
+cd %{_builddir}/glfw-2.6.2
 pushd ..
-cp -a glfw-2.6.1 buildavx2
+cp -a glfw-2.6.2 buildavx2
 popd
 
 %build
@@ -67,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687883832
+export SOURCE_DATE_EPOCH=1688410008
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
