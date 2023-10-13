@@ -5,7 +5,7 @@
 #
 Name     : pypi-glfw
 Version  : 2.6.2
-Release  : 9
+Release  : 10
 URL      : https://files.pythonhosted.org/packages/c1/f3/b3f3984f532cfe7e884b1ac9f4a2386df71cac563ab4cf98c999b48aad4f/glfw-2.6.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c1/f3/b3f3984f532cfe7e884b1ac9f4a2386df71cac563ab4cf98c999b48aad4f/glfw-2.6.2.tar.gz
 Summary  : A ctypes-based wrapper for GLFW3.
